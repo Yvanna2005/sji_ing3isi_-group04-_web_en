@@ -1,36 +1,3 @@
- 
-// // login
-// window.onload = function() {
-//     // Check if the user has a saved username in localStorage
-//     if (!localStorage.getItem('username')) {
-//       // If not, show the username prompt
-//       document.getElementById('username-prompt').style.display = 'block';
-//     } else {
-//       // Otherwise, proceed to the game lobby
-//       loadGameLobby();
-//     }
-//   };
-  
-//   function setUsername() {
-//     const username = document.getElementById('username').value;
-//     if (username) {
-//       localStorage.setItem('username', username); // Save username in localStorage
-//       document.getElementById('username-prompt').style.display = 'none';
-//       loadGameLobby(); // Proceed to game lobby
-//     }
-//   }
-  
-//   function loadGameLobby() {
-//     // Load the main game interface (categories, player list, etc.)
-//     console.log('Loading game lobby...');
-//     // Code to load categories and online players goes here
-//   }
-
-
-//   function resetUsername() {
-//     localStorage.removeItem('username');
-//     location.reload(); // Reload the page to show the username prompt again
-// }
 
 window.onload = function() {
   // Check if the player has already entered a username
@@ -88,51 +55,17 @@ function changeUsername() {
   document.getElementById('username-prompt').style.display = 'block';
 }
 
-// classifications
 
-// Player data
-let player1 = { name: "Player 1", consecutiveWins: 0, classification: "Mougou" };
-let player2 = { name: "Player 2", consecutiveWins: 0, classification: "Mougou" };
 
-// Function to check classification based on consecutive wins
-function updateClassification(player) {
-    if (player.consecutiveWins >= 6) {
-        player.classification = "Capricious Bearer";
-    } else if (player.consecutiveWins >= 3) {
-        player.classification = "Bearer";
-    } else {
-        player.classification = "Mougou";
-    }
+// Function to handle button clicks for removing objects
+function setupButtons() {
+  // Get the buttons
+  const remove1Button = document.getElementById("remove-1");
+  const remove2Button = document.getElementById("remove-2");
+  const remove3Button = document.getElementById("remove-3");
+
+  // Add event listeners for each button
+  remove1Button.addEventListener("click", () => removeObjects(1)); // Remove 1 object
+  remove2Button.addEventListener("click", () => removeObjects(2)); // Remove 2 objects
+  remove3Button.addEventListener("click", () => removeObjects(3)); // Remove 3 objects
 }
-
-// Function to handle match result
-function handleMatchResult(winner, loser) {
-    // Update winner's consecutive wins
-    winner.consecutiveWins++;
-    
-    // Reset loser's consecutive wins
-    loser.consecutiveWins = 0;
-    
-    // Update classifications for both players
-    updateClassification(winner);
-    updateClassification(loser);
-    
-    // Display results
-    displayPlayerInfo();
-}
-
-// Function to display player info
-function displayPlayerInfo() {
-    document.getElementById('player1-info').textContent = 
-        `${player1.name}: ${player1.consecutiveWins} wins - ${player1.classification}`;
-    
-    document.getElementById('player2-info').textContent = 
-        `${player2.name}: ${player2.consecutiveWins} wins - ${player2.classification}`;
-}
-
-
-
-// Initialize the display on page load
-displayPlayerInfo();
-
-handleMatchResult(player1, player2);

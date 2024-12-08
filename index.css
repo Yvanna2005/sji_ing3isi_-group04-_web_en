@@ -7,7 +7,7 @@
     justify-items: center; */
 /* } */
 
-.img1, .img2, .img3, .img4, .img5{
+.img1, .img2, .img3, .img4, .img5,.img6,.img7,.img8{
     display: flex;
     justify-content: space-between;
     gap: 20px;

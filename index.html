@@ -3,60 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nnim Game</title>
+    <title>Nim Game</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="./bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.css">
 </head>
 <body>
+    <nav>
+        <div class="nav-content">
+            <h2>Nim Game</h2>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#how-to-play">How to Play</a>
+                <a href="#history">History</a>
+                <a href="#support">Support</a>
+                <a href="#play">Play</a>
+            </div>
+            <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+        </div>
+    </nav>
 
-<!-- Login Prompt -->
-<div id="username-prompt" style="display: none;">
-    <form id="login-form">
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Your email" required>
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Your password" required>
-        <button type="submit" class="btn-secondary">Sign In</button>
-    </form>
-    <p>Don't have an account? <a href="#" onclick="showRegistration()">Register here</a>.</p>
-</div>
+    <section id="home" class="hero">
+        <div>
+            <h1>Welcome to Nim Game</h1>
+            <p>Experience the classic game of strategy and wit</p>
+        </div>
+        <a href="game.html" class="play-button">
+            Play Now <i class="fas fa-play"></i>
+        </a>
+    </section>
 
-<!-- Registration Prompt -->
-<div id="registration-prompt" style="display: none;">
-    <form id="registration-form">
-        <label for="reg-email">Email</label>
-        <input type="email" id="reg-email" placeholder="Your email" required>
-        <label for="reg-password">Password</label>
-        <input type="password" id="reg-password" placeholder="Your password" required>
-        <label for="reg-verify-password">Verify Password</label>
-        <input type="password" id="reg-verify-password" placeholder="Verify your password" required>
-        <button type="submit" class="btn-secondary">Register</button>
-    </form>
-    <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a>.</p>
-</div>
+    <section id="how-to-play" class="how-to-play">
+        <h2>How to Play</h2>
+        <div class="steps-container">
+            <div class="step-card" data-step="1">
+                <h3>Step 1: Setup</h3>
+                <p>Arrange objects (coins, matches, etc.) into different piles. Typically, start with 3-5 piles of varying sizes.</p>
+            </div>
+            <div class="step-card" data-step="2">
+                <h3>Step 2: Taking Turns</h3>
+                <p>Players take turns removing any number of objects from a single pile of their choice.</p>
+            </div>
+            <div class="step-card" data-step="3">
+                <h3>Step 3: Strategy</h3>
+                <p>Plan your moves carefully! Think about leaving specific pile configurations to force your opponent into unfavorable positions.</p>
+            </div>
+            <div class="step-card" data-step="4">
+                <h3>Step 4: Winning Move</h3>
+                <p>The player who takes the last object wins or loses (depending on the variant being played).</p>
+            </div>
+            <div class="step-card" data-step="5">
+                <h3>Step 5: Practice</h3>
+                <p>Master the game by learning common patterns and practicing different strategies against various opponents.</p>
+            </div>
+        </div>
+        <div class="step-controls">
+            <button class="step-btn" onclick="prevStep()">Previous</button>
+            <button class="step-btn" onclick="nextStep()">Next</button>
+        </div>
+    </section>
 
-<div id="home-page" class="d-none">
-    <h1 class="my-5">Nnim Game</h1>
-    <h3>Welcome, <span id="player-name"></span>!</h3>
-    <img src="./home/1.jpg" alt="home" class="my-3">
-    
-    <!-- Game Options -->
-    <div id="game-options" class="my-4">
-        <h4>Select Game Mode:</h4>
-        <button class="btn btn-primary" id="host-game">Host a Game</button>
-        <button class="btn btn-secondary" id="join-game">Join a Game</button>
-    </div>
+    <section id="history" class="history">
+        <h2>History of Nim</h2>
+        <p>Nim is believed to be one of the oldest games in history, with origins dating back to ancient China. The name "Nim" was coined by Charles L. Bouton of Harvard University, who also developed the complete mathematical theory of the game in 1901.</p>
+        <p>The word "Nim" is thought to come from an old Germanic word meaning "take," which perfectly describes the game's main action. The game gained popularity in the 20th century and has been studied extensively in mathematical game theory.</p>
+    </section>
 
-    <!-- Category Selection -->
-    <a href="./mougou.html" onclick="if (!checkAccess('mougou')) return false;">Mougou</a>
-    <a href="./bearer.html" onclick="if (!checkAccess('bearer')) return false;">Bearer</a>
-    <a href="./capricious.html" onclick="if (!checkAccess('capricious')) return false;">Capricious Bearer</a>
-    <button class="btn btn-outline-secondary my-3" onclick="changeUsername()">Change Username</button>
-</div>
+    <section id="support" class="support">
+        <h2>Support Us</h2>
+        <div class="contact-form">
+            <h3>Get in Touch</h3>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit" class="play-button">Send Message <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+        <p>Email us: support@nimgame.com</p>
+    </section>
 
-<script src="./bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.js"></script>
-<script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/peerjs@1.4.0/dist/peerjs.min.js"></script>
-<script src="./index.js"></script>
+    <section id="play" class="game-section">
+        <h2>Ready to Play?</h2>
+        <div class="game-container">
+            <p>Challenge yourself or play against friends in this classic game of strategy!</p>
+            <a href="game.html" class="play-button">
+                Start Playing <i class="fas fa-gamepad"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Nim Game. All rights reserved.</p>
+    </footer>
+
+<script src="index.js"></script>
 </body>
 </html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nim Game</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Home.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <h2>Nim Game</h2>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#how-to-play">How to Play</a>
+                <a href="#history">History</a>
+                <a href="#support">Support</a>
+                <a href="#play">Play</a>
+            </div>
+            <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div>
+            <h1>Welcome to Nnim Game</h1>
+            <p>Experience the classic game of strategy and wit</p>
+        </div>
+        <a href="game.html" class="play-button">
+            Play Now <i class="fas fa-play"></i>
+        </a>
+    </section>
+
+    <section id="how-to-play" class="how-to-play">
+        <h2>How to Play</h2>
+        <div class="steps-container">
+            <div class="step-card" data-step="1">
+                <h3>Step 1: Setup</h3>
+                <p>Arrange objects (coins, matches, etc.) into different piles. Typically, start with 3-5 piles of varying sizes.</p>
+            </div>
+            <div class="step-card" data-step="2">
+                <h3>Step 2: Taking Turns</h3>
+                <p>Players take turns removing any number of objects from a single pile of their choice.</p>
+            </div>
+            <div class="step-card" data-step="3">
+                <h3>Step 3: Strategy</h3>
+                <p>Plan your moves carefully! Think about leaving specific pile configurations to force your opponent into unfavorable positions.</p>
+            </div>
+            <div class="step-card" data-step="4">
+                <h3>Step 4: Winning Move</h3>
+                <p>The player who takes the last object wins or loses (depending on the variant being played).</p>
+            </div>
+            <div class="step-card" data-step="5">
+                <h3>Step 5: Practice</h3>
+                <p>Master the game by learning common patterns and practicing different strategies against various opponents.</p>
+            </div>
+        </div>
+        <div class="step-controls">
+            <button class="step-btn" onclick="prevStep()">Previous</button>
+            <button class="step-btn" onclick="nextStep()">Next</button>
+        </div>
+    </section>
+
+    <section id="history" class="history">
+        <h2>History of Nnim</h2>
+        <p>Nnim is believed to be one of the oldest games in history, with origins dating back to ancient China. The name "Nim" was coined by Charles L. Bouton of Harvard University, who also developed the complete mathematical theory of the game in 1901.</p>
+        <p>The word "Nnim" is thought to come from an old Germanic word meaning "take," which perfectly describes the game's main action. The game gained popularity in the 20th century and has been studied extensively in mathematical game theory.</p>
+    </section>
+
+    <section id="support" class="support">
+        <h2>Support Us</h2>
+        <div class="contact-form">
+            <h3>Get in Touch</h3>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit" class="play-button">Send Message <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+        <p>Email us: support@nimgame.com</p>
+    </section>
+
+    <section id="play" class="game-section">
+        <h2>Ready to Play?</h2>
+        <div class="game-container">
+            <p>Challenge yourself or play against friends in this classic game of strategy!</p>
+            <a href="game.html" class="play-button">
+                Start Playing <i class="fas fa-gamepad"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Nim Game. All rights reserved.</p>
+    </footer>
+
+<script src="Home.js"></script>
+</body>
+</html>
